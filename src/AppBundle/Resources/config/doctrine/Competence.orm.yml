@@ -1,0 +1,22 @@
+AppBundle\Entity\Competence:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CompetenceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: '50'
+        designation:
+            type: text
+
+    manyToMany:
+        stagiaires:
+            targetEntity: Stagiaire
+            mappedBy: competences
+    lifecycleCallbacks: {  }

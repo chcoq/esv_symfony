@@ -1,0 +1,27 @@
+AppBundle\Entity\Stagiaire:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\StagiaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '50'
+        prenom:
+            type: string
+            length: '50'
+        telephone:
+            type: string
+            length: '10'
+        date:
+            type: datetime
+    manyToMany:
+        competences:
+            targetEntity: Competence
+            inversedBy: stagiaires
+    lifecycleCallbacks: {  }
